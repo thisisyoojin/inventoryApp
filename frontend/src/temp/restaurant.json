@@ -1,0 +1,15 @@
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "restaurant_id": 1,
+            "restaurant_name": "Seoul Eats"
+        },
+        {
+            "restaurant_id": 2,
+            "restaurant_name": "Tokyo Eats"
+        }
+    ]
+}

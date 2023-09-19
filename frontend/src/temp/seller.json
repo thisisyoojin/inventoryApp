@@ -1,0 +1,15 @@
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "seller_id": 1,
+            "seller_name": "Costco"
+        },
+        {
+            "seller_id": 2,
+            "seller_name": "Wholesale"
+        }
+    ]
+}

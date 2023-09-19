@@ -1,0 +1,21 @@
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "restaurant_id": 1,
+            "title": "Cleaning",
+            "description": "Floor",
+            "status": false
+        },
+        {
+            "id": 2,
+            "restaurant_id": 2,
+            "title": "Prep",
+            "description": "Prep the meal",
+            "status": false
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "count": 4,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "item_id": 5,
+            "item_name": "Onions",
+            "restaurant_id": 1,
+            "seller_id": null,
+            "current_count": 13,
+            "created_on": "2023-07-21"
+        },
+        {
+            "item_id": 6,
+            "item_name": "Onions (Box)",
+            "restaurant_id": 2,
+            "seller_id": null,
+            "current_count": 0,
+            "created_on": "2023-07-21"
+        },
+        {
+            "item_id": 7,
+            "item_name": "leek",
+            "restaurant_id": 1,
+            "seller_id": 1,
+            "current_count": 13,
+            "created_on": "2023-07-22"
+        },
+        {
+            "item_id": 8,
+            "item_name": "leek (box)",
+            "restaurant_id": 2,
+            "seller_id": 2,
+            "current_count": 13,
+            "created_on": "2023-07-22"
+        },
+        {
+            "item_id": 15,
+            "item_name": "Onions",
+            "restaurant_id": 1,
+            "seller_id": null,
+            "current_count": 13,
+            "created_on": "2023-07-21"
+        },
+        {
+            "item_id": 16,
+            "item_name": "Onions (Box)",
+            "restaurant_id": 2,
+            "seller_id": null,
+            "current_count": 0,
+            "created_on": "2023-07-21"
+        },
+        {
+            "item_id": 17,
+            "item_name": "leek",
+            "restaurant_id": 1,
+            "seller_id": 1,
+            "current_count": 13,
+            "created_on": "2023-07-22"
+        },
+        {
+            "item_id": 18,
+            "item_name": "leek (box)",
+            "restaurant_id": 2,
+            "seller_id": 2,
+            "current_count": 13,
+            "created_on": "2023-07-22"
+        }
+    ]
+}

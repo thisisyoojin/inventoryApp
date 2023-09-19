@@ -1,0 +1,790 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /items/:
+    get:
+      operationId: listItems
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: restaurant_id
+        required: false
+        in: query
+        description: restaurant_id
+        schema:
+          type: string
+      - name: seller
+        required: false
+        in: query
+        description: seller
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - items
+    post:
+      operationId: createItem
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Item'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - items
+  /items/{item_id}/:
+    get:
+      operationId: retrieveItem
+      description: ''
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        description: A unique integer value identifying this item.
+        schema:
+          type: string
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: restaurant_id
+        required: false
+        in: query
+        description: restaurant_id
+        schema:
+          type: string
+      - name: seller
+        required: false
+        in: query
+        description: seller
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - items
+    put:
+      operationId: updateItem
+      description: ''
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        description: A unique integer value identifying this item.
+        schema:
+          type: string
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: restaurant_id
+        required: false
+        in: query
+        description: restaurant_id
+        schema:
+          type: string
+      - name: seller
+        required: false
+        in: query
+        description: seller
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Item'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - items
+    delete:
+      operationId: destroyItem
+      description: ''
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        description: A unique integer value identifying this item.
+        schema:
+          type: string
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: restaurant_id
+        required: false
+        in: query
+        description: restaurant_id
+        schema:
+          type: string
+      - name: seller
+        required: false
+        in: query
+        description: seller
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - items
+  /itemhistory/:
+    get:
+      operationId: listItemHistorys
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: updated_on
+        required: false
+        in: query
+        description: updated_on
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ItemHistory'
+          description: ''
+      tags:
+      - itemhistory
+    post:
+      operationId: createItemHistory
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemHistory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ItemHistory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ItemHistory'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemHistory'
+          description: ''
+      tags:
+      - itemhistory
+  /itemhistory/{id}/:
+    get:
+      operationId: retrieveItemHistory
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this item history.
+        schema:
+          type: string
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: updated_on
+        required: false
+        in: query
+        description: updated_on
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemHistory'
+          description: ''
+      tags:
+      - itemhistory
+    put:
+      operationId: updateItemHistory
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this item history.
+        schema:
+          type: string
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: updated_on
+        required: false
+        in: query
+        description: updated_on
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemHistory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ItemHistory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ItemHistory'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemHistory'
+          description: ''
+      tags:
+      - itemhistory
+    delete:
+      operationId: destroyItemHistory
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this item history.
+        schema:
+          type: string
+      - name: item_id
+        required: false
+        in: query
+        description: item_id
+        schema:
+          type: string
+      - name: updated_on
+        required: false
+        in: query
+        description: updated_on
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - itemhistory
+  /seller/:
+    get:
+      operationId: listSellers
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Seller'
+          description: ''
+      tags:
+      - seller
+    post:
+      operationId: createSeller
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Seller'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Seller'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Seller'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Seller'
+          description: ''
+      tags:
+      - seller
+  /seller/{seller_id}/:
+    get:
+      operationId: retrieveSeller
+      description: ''
+      parameters:
+      - name: seller_id
+        in: path
+        required: true
+        description: A unique integer value identifying this seller.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Seller'
+          description: ''
+      tags:
+      - seller
+    put:
+      operationId: updateSeller
+      description: ''
+      parameters:
+      - name: seller_id
+        in: path
+        required: true
+        description: A unique integer value identifying this seller.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Seller'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Seller'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Seller'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Seller'
+          description: ''
+      tags:
+      - seller
+    delete:
+      operationId: destroySeller
+      description: ''
+      parameters:
+      - name: seller_id
+        in: path
+        required: true
+        description: A unique integer value identifying this seller.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - seller
+  /restaurants/:
+    get:
+      operationId: listRestaurants
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Restaurant'
+          description: ''
+      tags:
+      - restaurants
+    post:
+      operationId: createRestaurant
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+          description: ''
+      tags:
+      - restaurants
+  /restaurants/{restaurant_id}/:
+    get:
+      operationId: retrieveRestaurant
+      description: ''
+      parameters:
+      - name: restaurant_id
+        in: path
+        required: true
+        description: A unique integer value identifying this restaurant.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+          description: ''
+      tags:
+      - restaurants
+    put:
+      operationId: updateRestaurant
+      description: ''
+      parameters:
+      - name: restaurant_id
+        in: path
+        required: true
+        description: A unique integer value identifying this restaurant.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+          description: ''
+      tags:
+      - restaurants
+    delete:
+      operationId: destroyRestaurant
+      description: ''
+      parameters:
+      - name: restaurant_id
+        in: path
+        required: true
+        description: A unique integer value identifying this restaurant.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - restaurants
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        item_id:
+          type: integer
+          readOnly: true
+        item_name:
+          type: string
+          maxLength: 30
+        restaurant:
+          type: integer
+        created_on:
+          type: string
+          format: date
+          readOnly: true
+        seller:
+          type: integer
+          nullable: true
+      required:
+      - item_name
+      - restaurant
+    ItemHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        item_id:
+          type: integer
+        count:
+          type: integer
+        updated_on:
+          type: string
+          format: date
+          readOnly: true
+      required:
+      - item_id
+      - count
+    Seller:
+      type: object
+      properties:
+        seller_id:
+          type: integer
+          readOnly: true
+        seller_name:
+          type: string
+      required:
+      - seller_name
+    Restaurant:
+      type: object
+      properties:
+        restaurant_id:
+          type: integer
+          readOnly: true
+        restaurant_name:
+          type: string
+          maxLength: 30
+      required:
+      - restaurant_name
